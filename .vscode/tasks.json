@@ -1,0 +1,55 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "group": "build",
+            "type": "shell",
+            "command": "call ./scripts/buildProject.cmd",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "clean",
+            "group": "build",
+            "type": "shell",
+            "command": "call ./scripts/cleanProject.cmd",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "rebuild",
+            "group": "build",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "clean",
+                "build"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "init",
+            "group": "none",
+            "type": "shell",
+            "command": "call ./scripts/initProject.cmd",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+            "problemMatcher": []
+        }
+    ]
+}

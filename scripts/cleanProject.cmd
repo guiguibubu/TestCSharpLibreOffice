@@ -28,4 +28,6 @@ exit /b 1
 call %SDK_PATH%\setsdkenv_windows.bat
 
 :clean
-rd /S /Q %OUT_BIN%
+if exist %OUT_BIN% (
+    rd /S /Q %OUT_BIN%
+)
