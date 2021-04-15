@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <AdditionalLibPaths>$(MSBuildProjectDirectory)\..\..\sdk\libreoffice</AdditionalLibPaths>
+    <Platform>x64</Platform>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences> -->
+  </PropertyGroup>
+
+  <!-- source files -->
+  <ItemGroup>
+    <Compile Include="$(MSBuildProjectDirectory)\..\SpreadsheetDocHelper.cs" />
+  </ItemGroup>
+
+  <!-- libreoffice sdk references -->
+  <ItemGroup>
+    <Reference Include="cli_basetypes">
+      <HintPath>$(MSBuildProjectDirectory)\..\..\sdk\libreoffice\cli_basetypes.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="cli_uretypes">
+      <HintPath>$(MSBuildProjectDirectory)\..\..\sdk\libreoffice\cli_uretypes.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="cli_oootypes">
+      <HintPath>$(MSBuildProjectDirectory)\..\..\sdk\libreoffice\cli_oootypes.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="cli_ure">
+      <HintPath>$(MSBuildProjectDirectory)\..\..\sdk\libreoffice\cli_ure.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="cli_cppuhelper">
+      <HintPath>$(MSBuildProjectDirectory)\..\..\sdk\libreoffice\cli_cppuhelper.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- dotnet sdk references -->
+  <ItemGroup>
+    <!-- <PackageReference Include="System.Runtime" Version="4.3.1" /> -->
+    <!-- <PackageReference Include="System.IO" Version="4.3.0" /> -->
+    <!-- <PackageReference Include="System.Text.Encoding" Version="4.3.0" /> -->
+    <!-- <PackageReference Include="System.Threading.Tasks" Version="4.3.0" /> -->
+    <!-- <PackageReference Include="System.Private.Uri" Version="4.3.2" /> -->
+    <!-- <PackageReference Include="System.Console" Version="4.3.1" /> -->
+    <!-- <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR-x64" Version="1.0.0" /> -->
+  </ItemGroup>
+
+</Project>
