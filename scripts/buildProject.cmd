@@ -45,14 +45,16 @@ SET CSC_FLAGS=%CSC_FLAGS% -debug+ -checked+ -define:DEBUG -define:TRACE
 ::CSC_FLAGS += -o
 ::endif
 
+ROBOCOPY %CLI_LIB_LOCATION% %OUT_BIN%
+
 SET CMD_LINE=%COMPILER_PATH%\csc.exe %CSC_FLAGS% -target:exe -out:%OUT_BIN%\ViewSample.exe -nologo ^
--r:%CLI_LIB_LOCATION%\cli_basetypes.dll ^
--r:%CLI_LIB_LOCATION%\cli_uretypes.dll ^
--r:%CLI_LIB_LOCATION%\cli_oootypes.dll ^
--r:%CLI_LIB_LOCATION%\cli_ure.dll ^
--r:%CLI_LIB_LOCATION%\cli_cppuhelper.dll ^
-SpreadsheetDocHelper.cs ^
-ViewSample.cs
+-r:%OUT_BIN%\cli_basetypes.dll ^
+-r:%OUT_BIN%\cli_uretypes.dll ^
+-r:%OUT_BIN%\cli_oootypes.dll ^
+-r:%OUT_BIN%\cli_ure.dll ^
+-r:%OUT_BIN%\cli_cppuhelper.dll ^
+src\SpreadsheetDocHelper.cs ^
+src\ViewSample\ViewSample.cs
 
 SET CMD_LINE
 call %CMD_LINE%
