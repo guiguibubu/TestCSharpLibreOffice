@@ -3,18 +3,17 @@
 SETLOCAL
 
 set PRJ_PATH=%~dp0..
-SET SDK_PATH=%PRJ_PATH%\sdk
 
-SET OUT_BIN=%PRJ_PATH%\bin
+set OUT_BIN=%PRJ_PATH%\bin
+SET TMP_PATH=%PRJ_PATH%\tmp
+set SCRIPT_PATH=%PRJ_PATH%\scripts
 
 pushd %PRJ_PATH%
 
-
-::where make >nul 2>&1 || call :setenv || goto :errorEnd
+call %SCRIPT_PATH%\verifyDevEnv.cmd || goto :errorEnd
 
 :start
-::call make clean || goto :errorEnd
-call :clean
+call :clean || goto :errorEnd
 
 :normalEnd
 popd
@@ -24,10 +23,11 @@ goto :eof
 popd
 exit /b 1
 
-:setenv
-call %SDK_PATH%\setsdkenv_windows.bat
-
 :clean
 if exist %OUT_BIN% (
-    rd /S /Q %OUT_BIN%
+    RD /S /Q %OUT_BIN%
 )
+if exist %TMP_PATH% (
+    RD /S /Q %TMP_PATH%
+)
+call dotnet clean --nologo -v m
