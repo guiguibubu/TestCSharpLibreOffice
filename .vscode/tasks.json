@@ -41,7 +41,7 @@
             "problemMatcher": []
         },
         {
-            "label": "init",
+            "label": "initProject",
             "group": "none",
             "type": "shell",
             "command": "call ./scripts/initProject.cmd",
