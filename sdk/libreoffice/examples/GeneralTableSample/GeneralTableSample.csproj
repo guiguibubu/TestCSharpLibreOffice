@@ -11,13 +11,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <PlatformTarget>x64</PlatformTarget>
-    <OutputPath>$(MSBuildProjectDirectory)\..\..\bin</OutputPath>
+    <OutputPath>$(MSBuildProjectDirectory)\..\..\..\..\bin</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
   	<DefineConstants>TRACE</DefineConstants>
     <PlatformTarget>x64</PlatformTarget>
-    <OutputPath>$(MSBuildProjectDirectory)\..\..\bin</OutputPath>
+    <OutputPath>$(MSBuildProjectDirectory)\..\..\..\..\bin</OutputPath>
   </PropertyGroup>
 
   <!-- source files -->
@@ -28,23 +28,23 @@
   <!-- libreoffice sdk references -->
   <ItemGroup>
     <Reference Include="cli_basetypes">
-      <HintPath>$(MSBuildProjectDirectory)\..\..\sdk\libreoffice\cli_basetypes.dll</HintPath>
+      <HintPath>$(MSBuildProjectDirectory)\..\..\cli_basetypes.dll</HintPath>
       <Private>true</Private>
     </Reference>
     <Reference Include="cli_uretypes">
-      <HintPath>$(MSBuildProjectDirectory)\..\..\sdk\libreoffice\cli_uretypes.dll</HintPath>
+      <HintPath>$(MSBuildProjectDirectory)\..\..\cli_uretypes.dll</HintPath>
       <Private>true</Private>
     </Reference>
     <Reference Include="cli_oootypes">
-      <HintPath>$(MSBuildProjectDirectory)\..\..\sdk\libreoffice\cli_oootypes.dll</HintPath>
+      <HintPath>$(MSBuildProjectDirectory)\..\..\cli_oootypes.dll</HintPath>
       <Private>true</Private>
     </Reference>
     <Reference Include="cli_ure">
-      <HintPath>$(MSBuildProjectDirectory)\..\..\sdk\libreoffice\cli_ure.dll</HintPath>
+      <HintPath>$(MSBuildProjectDirectory)\..\..\cli_ure.dll</HintPath>
       <Private>true</Private>
     </Reference>
     <Reference Include="cli_cppuhelper">
-      <HintPath>$(MSBuildProjectDirectory)\..\..\sdk\libreoffice\cli_cppuhelper.dll</HintPath>
+      <HintPath>$(MSBuildProjectDirectory)\..\..\cli_cppuhelper.dll</HintPath>
       <Private>true</Private>
     </Reference>
   </ItemGroup>
